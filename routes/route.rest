@@ -1,0 +1,29 @@
+//Get All Request
+GET http://localhost:3000/subscribers
+
+###
+//Get One Request
+GET http://localhost:3000/subscribers/62d1df92a886f56ce1383e01
+
+
+###
+POST http://localhost:3000/subscribers
+Content-Type: application/json
+
+
+{
+    "name": "John Doe",
+    "subscribedToChannel": "Web Dev"
+}
+
+###
+DELETE http://localhost:3000/subscribers/62d1e91483983c4390251909
+
+
+###
+PATCH  http://localhost:3000/subscribers/62d1e5795b9dc458f933321e
+Content-Type: application/json
+
+{
+    "name": "New Name"
+}

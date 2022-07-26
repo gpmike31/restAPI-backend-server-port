@@ -18,19 +18,22 @@ router.get('/:id', getSubscriber, (req, res) => {
 })
 //Creating one
 router.post('/', async (req, res) => {
-    const subscriber = new Subscriber({
-        name: req.body.name,
-        subscribedToChannel: req.body.subscribedToChannel
-    })
-    
-    try {
-        const newSubscriber = await subscriber.save();
-        res.status(201).json(newSubscriber)
-    } catch (err) {
-        res.status(400).json({ message: err.message });
+    if (!/\S/.test(req.body.subscribedToChannel)) {
+        return res.status(400).json({ message: 'Channel cannot be empty' })
     }
 
-})
+    const subscriber = new Subscriber({
+        name: req.body.name,
+        subscribedToChannel: req.body.subscribedToChannel,
+    });
+    try {
+        const newSubscriber = await subscriber.save()
+        res.status(201).json(newSubscriber)
+    } catch (err) {
+        res.status(400).json({ message: err.message })
+    }
+});
+
 //Updating one
 router.patch('/:id', getSubscriber, async (req, res) => {
     if (req.body.name != null) {

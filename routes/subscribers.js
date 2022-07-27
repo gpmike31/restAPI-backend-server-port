@@ -18,8 +18,12 @@ router.get('/:id', getSubscriber, (req, res) => {
 })
 //Creating one
 router.post('/', async (req, res) => {
-    if (!/\S/.test(req.body.subscribedToChannel)) {
-        return res.status(400).json({ message: 'Channel cannot be empty' })
+    //if (!/\S/.test(req.body.subscribedToChannel)) {
+        //return res.status(400).json({ message: 'Channel cannot be empty' })
+    //}
+
+    if (!/\^[0-9a-zA-Z]+$/.test(req.body.subscribedToChannel)) {
+        return res.status(400).json({ message: 'Channel cannot contain special characters' }) 
     }
 
     const subscriber = new Subscriber({

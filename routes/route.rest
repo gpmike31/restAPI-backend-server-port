@@ -12,8 +12,8 @@ Content-Type: application/json
 
 
 {
-    "name": "John Doe",
-    "subscribedToChannel": " a d f c g "
+    "name": "Paula Abdul",
+    "subscribedToChannel": "*!%&^%$#@"
 }
 
 ###

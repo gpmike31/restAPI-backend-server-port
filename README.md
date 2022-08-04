@@ -1,4 +1,4 @@
-# restAPI-practice
+# restAPI-backend-server-port
 
 Rest API dev enviorment created using a combination of Node.js, Express & MongoDB to test the creating, deleting, and updated a subscriber database. All functions and packages including test enviroment were built and created from within VS Code using npm i and npm i --save-dev dotenv nodemon to install all the necessary npm packages. dotenv allows the user to pull in enviorment variables from a .env file and nodemon allows the user to refresh the server everytime changes are made without having to mannually end it and restart it.
 
